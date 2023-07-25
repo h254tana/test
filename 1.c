@@ -2,13 +2,19 @@
 
 int main(void)
 {
-  int n;
+    int n;
 
-  printf("n = ");
-  scanf("%d", &n);
+    printf("n = ");
+     if (scanf("%d", &n) != 1) {
+        printf("入力エラー\n");
+        return 1;
+    }
 
-  if( n & 1 == 0 ){
-    printf("%d は偶数です\n", n);
-  }
-  return 0;
+    if (n & 1) {
+        printf("%d は奇数です\n", n);
+    } else {
+        printf("%d は偶数です\n", n);
+    }
+
+    return 0;
 }
